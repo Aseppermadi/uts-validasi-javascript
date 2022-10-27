@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        .banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(lapangan.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.konten{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.konten ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 50px;
+    position: relative;
+}
+
+
+.konten ul li a{
+    text-decoration: none;
+    color: rgb(244, 255, 123);
+}
+
+.judul{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: rgb(244, 241, 54);
+}
+.judul h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+button{
+    width: 100px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid #fdf740;
+    color: rgb(29, 27, 27);
+    cursor: pointer;
+
+}
+
+button:hover{
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="konten">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Tabel.html">Tabel</a></li>
+                <li><a href="index.html">Form</a></li>
+            </ul>
+        </div>
+        <div class="judul">
+            <h1>BARCELONA</h1>
+            <div class="btn">
+                <button type="button">
+                    <span></span>
+                    masuk
+                </button>
+            </div>
+        </div>
+    </div>
+</body> 
+</html>

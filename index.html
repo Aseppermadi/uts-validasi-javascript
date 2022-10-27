@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Register</title>
+    <link rel="stylesheet" href="dist/bootstrap.min.css">
+    <script src="dist/jquery.js"></script>
+    <script src="dist/jquery.validate.js"></script>
+    <style>
+        .error {
+            color : red;
+            font-size : 12px
+        }
+    </style>
+<body>
+    <main class="container">
+        <div class="col-md-6 p-lg-5 mx-auto">
+            <div class="row">
+                <h2 class="fw-bold my-1 text-center">Registrasi Pemain</h2>
+                <form action="" method="post" id="formregister">
+                    <label>Nama</label>
+                    <div class="form mb-2">
+                        <input type="text" class="form-control" name="Nama">
+                    </div>
+                    <label>Alamat</label>
+                    <div class="form mb-2">
+                        <input type="text" class="form-control" name="Alamat">
+                    </div>
+                    <label>Jenis Kelamin</label>
+                    <div class="form mb-2">
+                        <input type="radio" class="jk">laki laki
+                        <input type="radio" class="jk">perempuan
+                    </div>
+                    <label>tanggal-lahir</label>
+                    <div class="form mb-2">
+                        <input type="date" >
+                    </div>
+                    <label>Foto diri</label>
+                    <div class="form mb-2">
+                        <input type="file" name="gambar">
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg btn-primary" type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="dist/bootstrap.min.css"></script>
+    <script>
+        $(document).ready(function(){
+            $('#formregister').submit(function(event){
+                event.preventDefault();
+
+                $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+                    return arg != value;
+                }, "value must not equal arg.");
+
+                $("#formregister").validate({
+
+                    highlight: function (input) {
+                        $(input).parents('.mb-2').addClass('error');
+                    },
+                    unhighlight: function (input){
+                        $(input).parents('.mb-2').removeClass('error');
+                    },
+                    errorPlacement: function (error, element){
+                        $(element).parents('.mb-2').append(error);
+                    },
+
+                    rules: {
+                        Nama : "required",
+                        Alamat : "required",
+                        username : {
+                            required : true,
+                            minlength: 2
+                        },
+                        
+                        
+                    },
+                    messages: {
+                        Nama : "Nama tidak boleh kosong",
+                        Alamat : "Alamat tidak boleh kosong",
+                       
+                    },
+
+                })
+            })
+        });
+    </script>
+</body>
